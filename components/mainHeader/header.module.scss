@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    background-color: #d3d3d3;
+    padding: 8px 16px;
+    &:hover {
+        .navigation{
+            max-width: 20vw;
+        }
+    }
+
+
+    .navigation {
+        overflow: hidden;
+        max-width: 0;
+        transition: .7s ease-in-out;
+    }
+    
+}
+
+.imageLogo {
+    width: 140px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+
