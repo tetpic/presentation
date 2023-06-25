@@ -1,5 +1,6 @@
 export default function MainFooter () {
-    return (<>
+    return (<footer>
+    
     this is footer
-    </>)
+    </footer>)
 }

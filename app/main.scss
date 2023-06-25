@@ -64,36 +64,14 @@
     font-weight: 100;
 }
 
-@mixin xs {
-    @media (max-width: 450px) {
-        @content;
-    }
-}
-@mixin s {
-    @media (max-width: 600px) {
-        @content;
-    }
-}
-@mixin m {
-    @media (max-width: 1024px) {
-        @content;
-    }
+
+*{
+    box-sizing: border-box !important;
 }
 
-@mixin l {
-    @media (max-width: 1200px) {
-        @content;
-    }
+p {
+    margin: 0;
 }
-@mixin xl {
-    @media (max-width: 1600px) {
-        @content;
-    }
-}
-
-$caveat: "Caveat";
-$comissioner: "Comissioner";
-
 
 
 body {
@@ -105,6 +83,17 @@ body {
 
 h1 {
     margin: 0;
+}
+
+.content {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.main-wrapper {
+    min-height: 90vh;
 }
 
 

@@ -7,8 +7,11 @@ export default function RootLayout({children}: BasicChildren) {
     return (
       <html lang="en">
         <body>
+
             <MainHeader/>
-                {children}
+            <div className="main-wrapper">
+                  {children}
+            </div>
             <MainFooter/>
         </body>
       </html>

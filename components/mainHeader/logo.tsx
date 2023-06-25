@@ -7,6 +7,7 @@ export  function TetLogo() {
     return (<>
         <Image  src={tet} className={s.imageLogo}
         width={280}
+        priority
         height={344}
         alt="Picture of the author"/>
         </>
@@ -17,6 +18,7 @@ export function PicLogo() {
     return (<>
         <Image  src={pic} className={s.imageLogo}
         width={280}
+        priority
         height={344}
         alt="Picture of the other side of author"/>
         </>
