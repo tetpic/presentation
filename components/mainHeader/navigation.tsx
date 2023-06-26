@@ -19,7 +19,6 @@ export default function Navigation () {
             links.map((el, index)=> {
                 let isActive = (path === "/" && el.link === "/")?true:(path !== "/"&&el.link !== "/")?path.startsWith(el.link):false
                 return <Link key={index} href={el.link} className={concatStrings([s.navLink, (isActive?s.navLink_active:"")])}>{el.name}</Link>
-
             })
         }
     </nav>)

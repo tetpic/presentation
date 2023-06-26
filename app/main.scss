@@ -67,6 +67,7 @@
 
 *{
     box-sizing: border-box !important;
+    -webkit-tap-highlight-color: transparent;
 }
 
 p {
@@ -88,7 +89,7 @@ h1 {
 .content {
     max-width: 1920px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 Clamp(8px, 2vw, 20px);
     width: 100%;
 }
 

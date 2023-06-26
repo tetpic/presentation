@@ -4,9 +4,7 @@ import myself from "../../images/myself.jpg"
 import myselfMobile from "../../images/myselfMobile.png"
 
 export default function About () {
-    console.log("lol")
-    console.log(myselfMobile)
-    
+  
     return <>
         <section className={s.about}>
             <div className="content">
