@@ -38,6 +38,7 @@
     &__image {
         width: 20%;
         border-radius: $radius;
+        overflow: hidden;
         @include m {
             width: 120%;
             max-height: 40vw;

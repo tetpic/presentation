@@ -3,6 +3,16 @@
 
 .header {
     background-color: #d3d3d3;
+    position: relative;
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .navigation {
@@ -85,6 +95,14 @@
     display: flex;
     align-items: center;
     margin-top: 40px;
+    &:hover {
+        transform: rotate(-4deg) scale(1.1);
+        text-shadow: 5px 5px 20px #1d2583;
+        @include m {
+            transform: unset;
+            text-shadow: 0px 0px 10px #1d2583;        
+        }
+    }
     @include m {
         margin-top: unset;
         padding: 10px 0;
@@ -97,6 +115,10 @@
         color: #1d2583;
         text-shadow: 0px 0px 10px transparent;
         background-color: white;
+        &:hover {
+            transform: unset;
+            text-shadow: 0px 0px 10px transparent;
+        }
         @include m {
             background-color: #000000cc;
             color: white;

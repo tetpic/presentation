@@ -1,30 +1,80 @@
+"use client"
 import Image from "next/image"
 import s from "./about.module.scss"
 import myself from "../../images/myself.jpg"
 import myselfMobile from "../../images/myselfMobile.png"
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useEffect, useRef } from 'react';
+import { textChangeRangeIsUnchanged } from "typescript"
 
 export default function About () {
+    const aboutWrapper = useRef<HTMLElement>(null!)
+    const textParagraph = useRef<HTMLParagraphElement>(null!)
+    const text = useRef<string>(null!)
+
+
+    // const registerGsap = () => {
+    //     gsap.registerPlugin(ScrollTrigger);
+    //     ScrollTrigger.create({
+    //         trigger: "body",
+    //         start: "top 30%",
+    //         end: "bottom 100%",
+    //         onUpdate: (self) => {
+    //             let progress = self.progress * 100
+    //             setText(progress)
+    //             console.log(self.progress * 100)
+    //         }
+    //       });
+    // }
+
+    // const setText = (progress: number) => {
+    //     let textArray = Array.from(text.current)
+    //     let textLength = textArray.length
+    //     let textToShow = textArray.slice(0, ~~((textLength/100)*progress + 200))
+        
+
+    //     textParagraph.current.innerHTML = textToShow.join("")
+    // }
+
+    const typeText = () => {
+        let i = 0
+        let textArray = Array.from(text.current)
+        let textLength = textArray.length
+        let interval = setInterval(()=>{
+            textParagraph.current.innerHTML = textArray.slice(0, i).join("")
+            if (i === textLength) {
+                clearInterval(interval)
+            } else {
+                i = Math.random()*10 > 1?i+1:i-1
+            }
+        }, 50)
+    }
+  
+    useEffect(()=> {
+        text.current = textParagraph.current.innerHTML
+        textParagraph.current.style.height = textParagraph.current.clientHeight + "px"
+        textParagraph.current.style.opacity = "1"
+        typeText()
+    }, [])
+
   
     return <>
-        <section className={s.about}>
+        <section className={s.about} ref={aboutWrapper}>
             <div className="content">
-                <h1 className={s.about__title}>О себе</h1>
+                {/* <h1 className={s.about__title}>О себе</h1> */}
                 <div className={s.about__content}>
                     <picture className={s.about__image}>
                         <source srcSet={myselfMobile.src} media="(max-width: 1024px)"/>
                         <Image  alt={"userpic"} src={myself} />
                     </picture>
                     <div className={s.about__description}>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis voluptates veritatis officia, rerum corporis dolor vel doloremque eius rem suscipit, eum error, reprehenderit nulla laborum voluptate esse voluptatem fugiat atque?
-                        Quae dolore aperiam neque debitis, sapiente officia! Facere tenetur laboriosam porro nam nemo officia reiciendis inventore doloribus, aliquam error labore. Accusantium sapiente molestiae eveniet expedita, ipsam amet reiciendis? Aliquid, dolor!
-                        Illum reprehenderit libero rerum facere quia explicabo modi error dolore laborum aliquam ducimus non, asperiores quis molestiae doloremque enim eveniet, iusto ratione est, aliquid eum consequatur? Voluptates atque ea officia.
-                        Qui in quam quaerat, architecto commodi, totam unde quis sequi eligendi necessitatibus optio culpa provident adipisci aperiam possimus omnis quod dolor, neque reprehenderit. Commodi, minima sapiente aut minus a dicta!
-                        Nesciunt iste eaque nisi modi quod ea ab consequuntur at, consectetur laborum velit, laudantium accusamus! Beatae sequi repudiandae, at quod minus unde, nostrum iste consequuntur in, voluptates et odit pariatur.
-                        Natus, distinctio sequi impedit itaque optio hic explicabo aut nesciunt earum. Dolorem consectetur quos, explicabo aliquid illo iure quidem dolore fuga temporibus excepturi esse alias magni eos, voluptas, nesciunt architecto.
-                        Molestiae accusantium est explicabo dicta obcaecati autem laboriosam beatae cupiditate harum nulla alias numquam soluta a quia facilis odit iste cum, praesentium natus expedita, enim iusto! Fugit eveniet recusandae eligendi?
-                        Laborum, provident! Id earum suscipit neque magni itaque modi repellat, voluptatibus blanditiis nam reprehenderit fugiat soluta nulla voluptate sunt dolorum. Omnis rerum nesciunt dolores saepe doloribus sapiente debitis deserunt beatae?
-                        Itaque harum minima amet ullam ab consectetur magnam aspernatur laboriosam voluptatem a eligendi ea id, atque saepe error magni esse doloremque recusandae numquam! Minus similique ex, ut cupiditate non eius?
-                        Unde ipsa quia dolores. Voluptatum quae magnam id praesentium consectetur. Quos impedit magnam et aut reiciendis vero ipsa aperiam. Quod tenetur quibusdam voluptates molestiae blanditiis accusantium voluptatum, in ullam quos.</p>
+                        <p ref={textParagraph} style={{"opacity": 0}}>
+                            Фамилия: Быков <br />
+                            Имя: Никита <br />
+                            Отчество: Ильич <br />
+                            Профессия: Frontend разработчик
+                        </p>
                     </div>
                 </div>
             </div>
