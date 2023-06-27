@@ -10,7 +10,7 @@ export  function TetLogo() {
         width={280}
         priority
         height={344}
-        alt="Picture of the author"/>
+        alt="Picture of the logo"/>
         </>
     )
 }
@@ -21,7 +21,7 @@ export function PicLogo() {
         width={280}
         priority
         height={344}
-        alt="Picture of the other side of author"/>
+        alt="Picture of the other side of logo"/>
         </>
     )
 }

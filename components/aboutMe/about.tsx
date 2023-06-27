@@ -6,7 +6,12 @@ import myselfMobile from "../../images/myselfMobile.png"
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';
-import { textChangeRangeIsUnchanged } from "typescript"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import slide1 from "../../images/slide1.jpg"
+import slide2 from "../../images/slide2.jpg"
+import slide3 from "../../images/slide3.jpg"
+import slide4 from "../../images/slide4.jpg"
+import 'swiper/css';
 
 export default function About () {
     const aboutWrapper = useRef<HTMLElement>(null!)
@@ -70,14 +75,33 @@ export default function About () {
                     </picture>
                     <div className={s.about__description}>
                         <p ref={textParagraph} style={{"opacity": 0}}>
-                            Фамилия: Быков <br />
                             Имя: Никита <br />
+                            Фамилия: Быков <br />
                             Отчество: Ильич <br />
-                            Профессия: Frontend разработчик
+                            Профессия: Frontend разработчик <br />
+                            Место рождения: Удмуртия, Сарапул, Котово <br />
+                            Любимая цитата: "Сгорел сарай гори и хата" 
                         </p>
                     </div>
                 </div>
             </div>
+        </section>
+        <section>
+            <Swiper 
+            spaceBetween={0}
+            slidesPerView="auto"
+            loop={true}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}>
+                <SwiperSlide className={s.about__swiperSlide} ><Image className={s.swiper__image} src={slide1} alt="slide1"/></SwiperSlide>
+                <SwiperSlide className={s.about__swiperSlide} ><Image className={s.swiper__image} src={slide2} alt="slide2"/></SwiperSlide>
+                <SwiperSlide className={s.about__swiperSlide} ><Image className={s.swiper__image} src={slide3} alt="slide3"/></SwiperSlide>
+                <SwiperSlide className={s.about__swiperSlide} ><Image className={s.swiper__image} src={slide4} alt="slide4"/></SwiperSlide>
+                <SwiperSlide className={s.about__swiperSlide} ><Image className={s.swiper__image} src={slide1} alt="slide1"/></SwiperSlide>
+                <SwiperSlide className={s.about__swiperSlide} ><Image className={s.swiper__image} src={slide2} alt="slide2"/></SwiperSlide>
+                <SwiperSlide className={s.about__swiperSlide} ><Image className={s.swiper__image} src={slide3} alt="slide3"/></SwiperSlide>
+                <SwiperSlide className={s.about__swiperSlide} ><Image className={s.swiper__image} src={slide4} alt="slide4"/></SwiperSlide>
+            </Swiper>
         </section>
     </>
 }
