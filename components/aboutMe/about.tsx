@@ -48,6 +48,10 @@ export default function About () {
         let textLength = textArray.length
         let interval = setInterval(()=>{
             textParagraph.current.innerHTML = textArray.slice(0, i).join("")
+            if(!textParagraph.current) {
+                clearInterval(interval)
+                return
+            }
             if (i === textLength) {
                 clearInterval(interval)
             } else {
