@@ -1,0 +1,56 @@
+@import "../styles/mixins.module.scss";
+@import "../styles/variables.module.scss";
+
+.project {
+    &__item {
+        display: grid;
+        grid-template-areas: "t i" "d i" "l i";
+        justify-content: space-between;
+        grid-template-rows: auto auto 1fr;
+        row-gap: 24px;
+        background-color: #ffe4c480;
+        padding: 20px;
+        border-radius: $radius;
+
+    }
+
+    &__title {
+        grid-area: t;
+        font-family: $comissioner;
+        font-size: $titleSize;
+        font-weight: 800;
+    }
+
+    &__description {
+        grid-area: d;
+        font-family: $comissioner;
+        font-size: $pSize;
+        font-weight: 400;
+    }
+
+    &__linkWrapper {
+        grid-area: l;
+        font-family: $comissioner;
+        font-size: $pSize;
+        line-height: 160%;
+
+        a {
+            color: $pastaBlue;
+            font-size: $pSize;
+            font-weight: 600;
+            text-decoration: unset;
+            background-color: white;
+            border-radius: $radius;
+            padding: 4px 8px;
+            transition: .3s linear;
+            &:hover {
+                filter: invert(1);
+
+            }
+        }
+    }
+
+    &__image {
+        grid-area: i;
+    }
+}
