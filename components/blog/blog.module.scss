@@ -1,0 +1,40 @@
+@import "../styles/mixins.module.scss";
+@import "../styles/variables.module.scss";
+
+.blog {
+    &__item {
+        border-radius: $radius;
+        background-color: $whiteGhost;
+        overflow: hidden;
+        padding: 10px Clamp(8px, 2.5vw, 20px);
+        box-shadow: 2px 2px 10px $pastaGray;
+        margin: 10px 12px;
+        display: flex;
+        row-gap: 22px;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-family: $caveat;
+        font-weight: 600;
+        font-size: $handWriteSize;
+        color: $pastaBlue;
+        text-shadow: 1px 1px 3px $pastaBlue;
+        text-decoration: underline;
+    }
+
+    &__description {
+        font-family: $caveat;
+        font-weight: 400;
+        font-size: $handWriteSize;
+        color: $pastaBlue;
+        text-shadow: 1px 1px 3px $pastaBlue;
+    }
+
+    &__timestamp {
+        color: $pastaGray;
+        font-size: 12px;
+        font-family: $comissioner;
+
+    }
+}

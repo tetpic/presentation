@@ -52,6 +52,10 @@ export default function About () {
                 return 
             }
             textParagraph.current.innerHTML = textArray.slice(0, i).join("")
+            if(!textParagraph.current) {
+                clearInterval(interval)
+                return
+            }
             if (i === textLength) {
                 clearInterval(interval)
             } else {
