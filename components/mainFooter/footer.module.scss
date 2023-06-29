@@ -3,10 +3,10 @@
 
 .footer {
     background-color: #111111;
-    padding: 20px 0;
-
+    // padding: 20px 0;
+  
     &__copy {
-        font-family: $caveat;
+        font-family: $electrolize;
         font-weight: 600;
         color: gray;
         text-align: center;
@@ -16,4 +16,13 @@
             font-weight: 400;
         }
     }
+
+    &__wrapper {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    // &__lamp {
+
+    // }
 }

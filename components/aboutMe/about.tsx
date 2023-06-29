@@ -172,60 +172,7 @@ export default function About () {
                         <p className={s.changelog__item}>
                             25.06.2023: Развернул проект на next.js не используя фреймворк.
                         </p>
-                        <p className={s.changelog__item}>
-                            28.06.2023: Создал макет в Figma, где начал разрабатывать визуал для этого сайта. 
-                        </p>
-                        <p className={s.changelog__item}>
-                            25.06.2023: Развернул проект на next.js не используя фреймворк.
-                        </p>
-                        <p className={s.changelog__item}>
-                            28.06.2023: Создал макет в Figma, где начал разрабатывать визуал для этого сайта. 
-                        </p>
-                        <p className={s.changelog__item}>
-                            25.06.2023: Развернул проект на next.js не используя фреймворк.
-                        </p>
-                        <p className={s.changelog__item}>
-                            28.06.2023: Создал макет в Figma, где начал разрабатывать визуал для этого сайта. 
-                        </p>
-                        <p className={s.changelog__item}>
-                            25.06.2023: Развернул проект на next.js не используя фреймворк.
-                        </p>
-                        <p className={s.changelog__item}>
-                            28.06.2023: Создал макет в Figma, где начал разрабатывать визуал для этого сайта. 
-                        </p>
-                        <p className={s.changelog__item}>
-                            25.06.2023: Развернул проект на next.js не используя фреймворк.
-                        </p>
-                        <p className={s.changelog__item}>
-                            28.06.2023: Создал макет в Figma, где начал разрабатывать визуал для этого сайта. 
-                        </p>
-                        <p className={s.changelog__item}>
-                            25.06.2023: Развернул проект на next.js не используя фреймворк.
-                        </p>
-                        <p className={s.changelog__item}>
-                            28.06.2023: Создал макет в Figma, где начал разрабатывать визуал для этого сайта. 
-                        </p>
-                        <p className={s.changelog__item}>
-                            25.06.2023: Развернул проект на next.js не используя фреймворк.
-                        </p>
-                        <p className={s.changelog__item}>
-                            28.06.2023: Создал макет в Figma, где начал разрабатывать визуал для этого сайта. 
-                        </p>
-                        <p className={s.changelog__item}>
-                            25.06.2023: Развернул проект на next.js не используя фреймворк.
-                        </p>
-                        <p className={s.changelog__item}>
-                            28.06.2023: Создал макет в Figma, где начал разрабатывать визуал для этого сайта. 
-                        </p>
-                        <p className={s.changelog__item}>
-                            25.06.2023: Развернул проект на next.js не используя фреймворк.
-                        </p>
-                        <p className={s.changelog__item}>
-                            28.06.2023: Создал макет в Figma, где начал разрабатывать визуал для этого сайта. 
-                        </p>
-                        <p className={s.changelog__item}>
-                            25.06.2023: Развернул проект на next.js не используя фреймворк.
-                        </p>
+                        
                     </div>
                 </div>
             </div>
