@@ -1,6 +1,13 @@
 @import "../styles/mixins.module.scss";
 @import "../styles/variables.module.scss";
 
+
+.title {
+    font-family: $electrolize;
+    font-weight: 600;
+    font-size: $titleSize;
+}
+
 .about {   
     padding: 32px 0;
     overflow: hidden;
@@ -16,17 +23,14 @@
         }
     }
 
-    &__title {
-        font-family: $comissioner;
-        font-weight: 600;
-        font-size: $titleSize;
+    &__title {       
         text-align: center;
         margin-bottom: 16px;
     }
 
     &__description {
         width: 78%;
-        font-family: $comissioner;
+        font-family: $electrolize;
         font-size: $pSize;
         line-height: 140%;
         @include m {
@@ -59,13 +63,7 @@
     background-color: white;
     padding-bottom: 30px;
 
-    &__title {
-        font-family: $comissioner;
-        font-weight: 600;
-        font-size: $titleSize;
-        text-align: center;
-        margin-bottom: 16px;
-    }
+    
 
     &__swiperSlide {
         width: auto;
@@ -81,6 +79,119 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+    }
+}
+
+.project {
+    background-color: $greenHaki;
+    padding-bottom: 40px;
+
+    &__title {    
+        text-align: center;
+        margin-bottom: 16px;
+        position: relative;
+        color: white;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 2px;
+            background-color: white;
+
+        }
+    }
+
+    &__titleWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+
+    &__description {
+        color: white;
+        font-family: $electrolize;
+        font-size: $pSize;
+        font-weight: 400;
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        margin-top: 30px;
+    }
+}
+
+
+.changelog{
+    background-color: $grayBlue;
+    padding: 30px 0;
+    height: 400px;
+    overflow: hidden;
+
+    &__content {
+        perspective: 800px;
+    }
+
+    &__title {
+        color: white;
+        text-align: end;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: flex-end;
+        row-gap: 20px;
+        &::after {
+            content: "";
+            display: block;
+            bottom: -20px;
+            right: 0;
+            width: 37%;
+            height: 2px;
+            background-color: white;
+        }
+    }
+
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: center;
+        transform: translateY(400px);
+        animation: runningLog 20s linear infinite;
+    }
+
+    &__itemsWrapper {
+        transform: rotate3d(1, 0, 0, 45deg);
+        height: 400px;
+        transform-origin: top;
+        margin-top: 30px;
+    }
+
+    &__itemsHead {
+        font-family: $electrolize;
+        font-size: $titleSize;
+        font-weight: 400;
+        color: white;
+    }
+
+
+    &__item {
+        font-family: $electrolize;
+        font-size: $pSize;
+        color: white;
+        font-weight: 400;
+    }
+
+
+    @keyframes runningLog {
+        100% {
+            transform: translateY(-200%);
         }
     }
 }
