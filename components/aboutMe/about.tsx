@@ -45,33 +45,33 @@ export default function About () {
     //     textParagraph.current.innerHTML = textToShow.join("")
     // }
 
-    // const typeText = () => {
-    //     let i = 0
-    //     let textArray = Array.from(text.current)
-    //     let textLength = textArray.length
-    //     let interval = setInterval(()=>{
-    //         if(!textParagraph.current) {
-    //             clearInterval(interval)
-    //             return 
-    //         }
-    //         textParagraph.current.innerHTML = textArray.slice(0, i).join("")
-    //         if(!textParagraph.current) {
-    //             clearInterval(interval)
-    //             return
-    //         }
-    //         if (i === textLength) {
-    //             clearInterval(interval)
-    //         } else {
-    //             i = Math.random()*10 > 1?i+1:i-1
-    //         }
-    //     }, 50)
-    // }
+    const typeText = () => {
+        let i = 0
+        let textArray = Array.from(text.current)
+        let textLength = textArray.length
+        let interval = setInterval(()=>{
+            if(!textParagraph.current) {
+                clearInterval(interval)
+                return 
+            }
+            textParagraph.current.innerHTML = textArray.slice(0, i).join("")
+            if(!textParagraph.current) {
+                clearInterval(interval)
+                return
+            }
+            if (i === textLength) {
+                clearInterval(interval)
+            } else {
+                i = Math.random()*10 > 1?i+1:i-1
+            }
+        }, 20)
+    }
   
     useEffect(()=> {
         text.current = textParagraph.current.innerHTML
         textParagraph.current.style.height = textParagraph.current.clientHeight + "px"
         textParagraph.current.style.opacity = "1"
-        // typeText()
+        typeText()
     }, [])
 
   
@@ -110,7 +110,6 @@ export default function About () {
                         и проявляю творческий подход в реализации различных интерактивных 
                         компонентов. А главное - всей душой люблю то чем я занимался, 
                         и то, чем занимаюсь сейчас.
-
                         </p>
                     </div>
                 </div>
@@ -118,7 +117,7 @@ export default function About () {
         </section>
         <section className={s.gallery}>           
             <Swiper 
-            spaceBetween={10}
+            spaceBetween={0}
             slidesPerView="auto"
             loop={true}
             // onSlideChange={() => console.log('slide change')}
@@ -152,7 +151,9 @@ export default function About () {
                         Во вторую это блог, в котором буду публиковать какие-то статьи, возможно отзывы по собеседованиям, если они окажутся интересными. И другой околопрограммистский флуд. 
                     </p>
                     <p className={s.project__descItem}>
-                        В третьих - это отличная возможность скинуть кому-то посмотреть мой сайт, и человек удобно ознакомится с проектами, да и со мной. Ведь как говорил великий философ Ф. Кайв: “Лучшая визитная карточка веб-разраба это его сайт”.
+                        Во третью - это отличная возможность скинуть кому-то посмотреть мой сайт, и человек удобно ознакомится с проектами, да и со мной. Ведь как говорил великий философ Ф. Кайв: “Лучшая визитная карточка веб-разраба это его сайт”.
+                    </p>
+                    <p className={s.project__descItem}>
                         Р.S.: есть в планах, если в каком-нибудь из отпусков будет слишком пасмурная погода, да и чтобы хоть как-то оправдать название проекта - сделать тут мини игру тетрис. Мне опыт, и кому-то время убить, поразвлекаться.
                     </p>
                 </div>
@@ -170,7 +171,11 @@ export default function About () {
                             28.06.2023: Создал макет в Figma, где начал разрабатывать визуал для этого сайта. 
                         </p>
                         <p className={s.changelog__item}>
-                            25.06.2023: Развернул проект на next.js не используя фреймворк.
+                            25.06.2023: Развернул проект на next.js не используя create next app.
+                        </p>
+                        <p className={s.changelog__item}>
+                            1.07.2023: Сделал футер, где есть неоновая вывеска, <br /> которая моргает и передает свет на соседний элемент. <br />
+                            Так же добавил лампу, которая подсвечивает данные по контактам.
                         </p>
                         
                     </div>

@@ -7,9 +7,9 @@ import { concatStrings } from '../../helpers/common'
 export  function TetLogo() {
     return (<>
         <Image  src={tet} className={s.imageLogo}
-        width={280}
+        width={80}
         priority
-        height={344}
+        height={100}
         alt="Picture of the logo"/>
         </>
     )
@@ -18,9 +18,9 @@ export  function TetLogo() {
 export function PicLogo() {
     return (<>
         <Image  src={pic} className={concatStrings([s.imageLogo, s.imageLogo_second])}
-        width={280}
+        width={80}
         priority
-        height={344}
+        height={100}
         alt="Picture of the other side of logo"/>
         </>
     )
