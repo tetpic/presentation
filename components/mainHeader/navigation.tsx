@@ -7,8 +7,8 @@ import s from "./header.module.scss"
 const links = [
     {name: "PROJECTS", link: "/projects"},
     {name: "BLOG", link: "/blog"},
-    {name: "MUSIC", link: "/music", disabled: true},
-    {name: "DEV", link: "/dev", disabled: true},
+    {name: "/* MUSIC */", link: "/music", disabled: true},
+    {name: "/* DEV */", link: "/dev", disabled: true},
     {name: "ABOUT", link: "/"},
 ]
 
