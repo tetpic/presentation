@@ -13,6 +13,7 @@
   "author": "tetpic",
   "license": "ISC",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "@types/react": "^18.2.13",
     "express": "^4.18.2",
     "gsap": "^3.12.1",
@@ -20,6 +21,7 @@
     "next": "^13.4.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.1.1",
     "sass": "^1.63.4",
     "styled-components": "^6.0.0-rc.5",
     "swiper": "^9.4.1",

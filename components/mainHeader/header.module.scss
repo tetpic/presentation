@@ -43,6 +43,16 @@
         padding: 0px;
         border-radius: $radius;
     }
+
+
+    &__admin {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        height: 100%;
+        justify-content: flex-end;
+        row-gap: 10px;
+    }
    
 }
 

@@ -10,7 +10,7 @@ const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   database: "tetpic",
-  password: "password"
+  password: ""
 });
 connection.connect(function(err){
     if (err) {

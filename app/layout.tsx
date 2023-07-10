@@ -1,17 +1,22 @@
 import MainFooter from "../components/mainFooter/footer";
 import MainHeader from "../components/mainHeader/header";
-import { BasicChildren } from "../types/basicTypes";
+import { Providers } from "../redux/provider";
+
 import "./main.scss"
 
-export default function RootLayout({children}: BasicChildren) {
+
+
+export default function RootLayout({children}: {children: React.ReactNode}) {
     return (
       <html lang="en">
-        <body>    
+        <body>  
+          <Providers>  
             <MainHeader/>
-            <div className="main-wrapper">
+                <div className="main-wrapper">
                   {children}
-            </div>
+                </div>
             <MainFooter/>
+          </Providers>
         </body>
       </html>
     )

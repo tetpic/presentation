@@ -22,5 +22,9 @@ export default function Navigation () {
                 return <Link key={index} href={el.link} className={concatStrings([s.navLink, (isActive?s.navLink_active:""), (el.disabled?s.navLink_disabled:"")])}>{el.name}</Link>
             })
         }
+        <div className={s.navigation__admin}>
+            <Link href="/login" className={s.navLink}>LOG IN</Link>
+            <Link href="/admin" className={s.navLink}>TETPIC <br/> STUDIO</Link>
+        </div>
     </nav>)
 }
