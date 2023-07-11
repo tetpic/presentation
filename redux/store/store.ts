@@ -1,13 +1,24 @@
 import { configureStore } from '@reduxjs/toolkit'
 import blogReducer from "./blogSlice"
+import createSagaMiddleware from "redux-saga";
+import {watchSendBlog} from "../sagas/blogSaga";
 
+
+const saga = createSagaMiddleware()
+
+// let sagaMiddleware = createSagaMiddleware();
+// const middleware = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware];
 
 
 export const store = configureStore({
   reducer: {
     blogs: blogReducer
   },
+  middleware: [saga]
 })
+
+
+saga.run(()=> watchSendBlog(store));
 
 
 

@@ -15,6 +15,8 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@types/react": "^18.2.13",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "gsap": "^3.12.1",
     "mysql": "^2.18.1",
@@ -22,6 +24,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.1",
+    "redux-saga": "^1.2.3",
     "sass": "^1.63.4",
     "styled-components": "^6.0.0-rc.5",
     "swiper": "^9.4.1",
