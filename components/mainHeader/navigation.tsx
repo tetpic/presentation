@@ -5,11 +5,11 @@ import { concatStrings } from "../../helpers/common"
 import s from "./header.module.scss"
 
 const links = [
+    {name: "ABOUT", link: "/"},
     {name: "PROJECTS", link: "/projects"},
     {name: "BLOG", link: "/blog"},
-    {name: "/* MUSIC */", link: "/music", disabled: true},
-    {name: "/* DEV */", link: "/dev", disabled: true},
-    {name: "ABOUT", link: "/"},
+    {name: "MUSIC", link: "/music", disabled: true},
+    {name: "DEV", link: "/dev", disabled: true},
 ]
 
 export default function Navigation () {
@@ -23,8 +23,8 @@ export default function Navigation () {
             })
         }
         <div className={s.navigation__admin}>
-            <Link href="/login" className={s.navLink}>LOG IN</Link>
-            <Link href="/admin" className={s.navLink}>TETPIC <br/> STUDIO</Link>
+            <Link href="/login" className={concatStrings([s.navLink, s.navLink_disabled])}>LOG IN</Link>
+            <Link href="/admin" className={concatStrings([s.navLink, s.navLink_disabled])}>TETPIC <br/> STUDIO</Link>
         </div>
     </nav>)
 }

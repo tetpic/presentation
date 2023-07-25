@@ -1,6 +1,6 @@
 import { concatStrings } from "../../helpers/common"
 import s from "./header.module.scss"
-import  { TetLogo, PicLogo } from "./logo"
+import  {MainLogo } from "./logo"
 import Navigation from "./navigation"
 
 export default function MainHeader() {
@@ -9,8 +9,7 @@ export default function MainHeader() {
     return (<>
     <header  className={s.header}>
         <div className={concatStrings([s.headerContent, " content"])}>
-            <TetLogo/>
-            <PicLogo/>
+            <MainLogo/>
             <Navigation/>
         </div>
     </header>

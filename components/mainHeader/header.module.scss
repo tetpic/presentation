@@ -2,10 +2,11 @@
 @import "../styles/variables.module.scss";
 
 .header {
-    background-color: #A1A1A1;
     position: relative;
-    box-shadow: 2px 2px 10px 0px #00000040 inset;
-    padding-bottom: 10px;
+    background: #171821;
+    box-shadow: 2px 0px 10px 0px #0082FB inset;    
+    padding: 12px 0;
+
 
     &__background {
         position: absolute;
@@ -81,12 +82,13 @@
 
 .navLink {
     font-family: $electrolize;
-    font-weight: 800;
+    font-weight: 400;
     white-space: nowrap;
     flex-shrink: 0;
     font-size: $pSize;
-    color: black;
+    color: white;
     text-decoration: unset; 
+    text-shadow: 0px 0px 4px 0px #094EFF;
     &:hover {
         transform: rotate(-4deg) scale(1.1);
         @include m {
@@ -102,7 +104,9 @@
 
 
     &_active {
-        transform: translateY(-100%);      
+        transform: translateY(-100%);   
+        color: #56AEFF;
+        text-shadow: 0px 0px 10px 0px #000;   
         &:hover {
             transform: translateY(-100%);
         }
@@ -110,7 +114,8 @@
 
     &_disabled {
         pointer-events: none;
-        opacity: .5;
+        // opacity: .5;
+        color: black;
     }
 }
 
