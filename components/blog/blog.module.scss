@@ -15,20 +15,18 @@
     }
 
     &__title {
-        font-family: $caveat;
+        font-family: $comissioner;
         font-weight: 600;
-        font-size: $handWriteSize;
+        font-size: 18px;
         color: $pastaBlue;
-        text-shadow: 1px 1px 3px $pastaBlue;
         text-decoration: underline;
     }
 
     &__description {
-        font-family: $caveat;
+        font-family: $comissioner;
         font-weight: 400;
-        font-size: $handWriteSize;
+        font-size: 18px;
         color: $pastaBlue;
-        text-shadow: 1px 1px 3px $pastaBlue;
     }
 
     &__timestamp {

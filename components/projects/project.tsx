@@ -1,6 +1,4 @@
-import Image from "next/image"
 import s from "./projects.module.scss"
-import bnb from "../../images/projects/birdsandbees.png"
 import Link from "next/link"
 
 export default function Project () {
@@ -19,7 +17,7 @@ export default function Project () {
             Познакомиться с проектом на гитхабе можно по этой ссылке:  <Link href="https://github.com/tetpic/bnb-student-project">Birds and Bees GIT</Link> <br />
             Прямая ссылка на GIT Pages:  <Link href="https://tetpic.github.io/bnb-student-project/">Birds and Bees Page</Link> <br />
         </p>
-        <Image className={s.project__image} src={bnb} alt="project image" width={700} height={357} ></Image>
+        <img className={s.project__image} src={'/images/projects/birdsandbees.png'} alt="project image" width={700} height={357} ></img>
     </article>
     </>)
 }

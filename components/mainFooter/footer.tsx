@@ -1,7 +1,6 @@
 "use client"
 import Image from "next/image"
 import s from "./footer.module.scss"
-import lamp from "../../images/footer-lamp.png"
 import { useEffect, useRef } from "react"
 import { concatStrings } from "../../helpers/common"
 
@@ -43,7 +42,7 @@ export default function MainFooter () {
                     Мрачный подвал...
                 </p>
                 <div className={s.footer__lampWrapper} ref={lampElement}>
-                    <Image className={s.footer__lamp} src={lamp} alt="footer lamp"/>                    
+                    <img className={s.footer__lamp} src={'/images/footer-lamp.png'} alt="footer lamp"/>                    
                 </div>
                 <p className={s.footer__contactsLogo}>Contacts:</p>
                 <div className={s.footer__contactsWrapper} ref={contactsElement}>                 

@@ -4,9 +4,8 @@ import {blogsObject, BlogObject} from "./blogsObject"
 export default function Blog () {
     return <>
     {
-        blogsObject.map((el: BlogObject)=> {
+        [...blogsObject].reverse().map((el: BlogObject)=> {
             return(<BlogItem {...el}/>)
-
         })
     }
     </>

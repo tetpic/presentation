@@ -1,58 +1,23 @@
 "use client"
-import Image from "next/image"
 import s from "./about.module.scss"
-// import myself from "../../images/myself.jpg"
-// import myselfMobile from "../../images/myselfMobile.png"
-// import { gsap } from 'gsap';
-// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-// import { useEffect, useRef } from 'react';
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import slide1 from "../../images/slide1.jpg"
-// import slide2 from "../../images/slide2.jpg"
-// import slide3 from "../../images/slide3.jpg"
-// import slide4 from "../../images/slide4.jpg"
-// import tet from "../../images/tet.png"
-// import pic from "../../images/pic.png"
-import wires from "../../images/wires.svg"
 import { concatStrings } from "../../helpers/common"
-
-
-import { Canvas, useLoader  } from "@react-three/fiber";
-import { OrbitControls, } from "@react-three/drei";
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-
-function Model() {
-    const gltf = useLoader(GLTFLoader, '/avocado/Avocado.gltf')
-    return <primitive object={gltf.scene} />
-}
 
 export default function About () { 
   
     return <>
         <section className={s.about}>          
             <picture className={s.about__background}>
-                <Image src={wires}  alt="wires background"/>
+                <img src={'/images/wires.svg'}  alt="wires background"/>
             </picture>
-
-            <Canvas camera={{fov: 6, position: [0, 0, 1]}}>             
-                <ambientLight intensity={0.1} />
-                <directionalLight position={[1, 1, 1]} intensity={0.8} />
-                <OrbitControls target={[0, 0, 0]} autoRotate={true}/>
-                <mesh position={[0, -0.03, 0]}>
-                  <Model/>
-                  <meshStandardMaterial />
-                </mesh>
-            </Canvas>
-
         </section>
         <section className={s.gallery}>           
         </section>
-        {/* <section className={s.project}>
+        <section className={s.project}>
             <div className="content">
                 <div className={s.project__titleWrapper}>
-                    <Image src={tet} width={82} height={100} alt={"tet logo"}/>
+                    <img src={'/images/tet.png'} width={82} height={100} alt={"tet logo"}/>
                     <h6 className={concatStrings([s.title, s.project__title])}>О проекте TETPIC</h6>
-                    <Image src={pic} width={82} height={100} alt={"pic logo"}/>
+                    <img src={'/images/pic.png'} width={82} height={100} alt={"pic logo"}/>
                 </div>
                 <div className={s.project__description}>
                     <p className={s.project__descItem}>
@@ -72,7 +37,7 @@ export default function About () {
                     </p>
                 </div>
             </div>
-        </section> */}
+        </section>
         <section className={s.changelog}>
             <div className={concatStrings([s.changelog__content, "content"])}>
                 <h6 className={concatStrings([s.title, s.changelog__title]) }>
