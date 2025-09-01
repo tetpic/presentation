@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
+RewriteRule !\.\w{2,4}$ %{REQUEST_URI}.html [L]
+#RewriteBase /
+#RewriteCond ${REQUEST_FILENAME} !-d
+#RewriteCond ${REQUEST_FILENAME} !-f
+#RewriteRule ^(.*)$ $1.html [L]
