@@ -61,7 +61,5 @@ export default function SetListReview(props: Props) {
         )
       })
     }
-
-
   </div>)
 }

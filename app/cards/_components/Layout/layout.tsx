@@ -1,3 +1,4 @@
+import Menu from '../Menu/menu'
 import styles from './layout.module.scss'
 
 interface Props {
@@ -7,6 +8,9 @@ interface Props {
 export default function CardsLayout(props: Props) {
 
   return (<div className={styles.root}> 
+    <Menu/>
+    <div className={styles.cardsRoot}>
     {props.children}
+    </div>
   </div>)
 }

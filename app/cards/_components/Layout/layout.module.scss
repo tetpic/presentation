@@ -1,0 +1,11 @@
+.cardsRoot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 12px;
+  column-gap: 16px;
+  padding: 24px;
+  width: 100%;
+  perspective: 1000px;
+}
