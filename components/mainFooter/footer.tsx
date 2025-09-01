@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image"
 import s from "./footer.module.scss"
 import { useEffect, useRef } from "react"
 import { concatStrings } from "../../helpers/common"

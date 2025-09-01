@@ -11,11 +11,11 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <html lang="en">
         <body>  
           <Providers>  
-            <MainHeader/>
+            {/* <MainHeader/> */}
                 <div className="main-wrapper">
                   {children}
                 </div>
-            <MainFooter/>
+            {/* <MainFooter/> */}
           </Providers>
         </body>
       </html>
