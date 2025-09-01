@@ -1,0 +1,10 @@
+@import "/components/styles/mixins.module.scss";
+
+.button {
+  @include blueButton;
+}
+
+.title {
+  @include title;
+  margin-bottom: 16px;
+}

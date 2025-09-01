@@ -1,3 +1,5 @@
+@import "./variables.module.scss";
+
 @mixin xs {
     @media (max-width: 450px) {
         @content;
@@ -23,4 +25,23 @@
     @media (max-width: 1600px) {
         @content;
     }
+}
+
+@mixin blueButton {
+    background-color: #0082FB;
+    text-decoration: unset;
+    color: white;
+    border-radius: 12px;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-family: $comissioner;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@mixin title {
+    font-family: $comissioner;
+    font-size: 24px;
+    font-weight: 600;
 }

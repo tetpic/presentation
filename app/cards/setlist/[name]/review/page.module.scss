@@ -1,0 +1,64 @@
+@import "/components/styles/mixins.module.scss";
+
+.root {
+  padding: 16px;
+}
+
+.submit {
+  @include blueButton;
+  margin-top: 16px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 12px;
+  margin-top: 24px;
+
+
+
+  label {
+    font-size: 16px;
+    font-family: $comissioner;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  input {
+    padding: 8px 16px;
+    border: 1px solid #ECECEC;
+    border-radius: 8px;
+    width: 70%;
+    min-width: 180px;
+    font-size: 16px;
+    font-family: $comissioner;
+    font-weight: 400;
+  }
+}
+
+.setlist {
+  display: flex;
+  row-gap: 12px;
+  column-gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 24px;
+
+  .set {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: $pastaGray;
+    color: $whiteGhost;
+    font-family: $comissioner;
+    text-decoration: unset;
+  }
+}
+
+.empty {
+  font-family: $comissioner;
+  font-weight: 400;
+  margin-top: 24px;
+}

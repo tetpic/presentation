@@ -1,10 +1,12 @@
 'use client'
 import { useParams } from 'next/navigation'
 import { Card, db } from '../../../../../components/database/db'
-import { useEffect } from 'react'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { useForm } from 'react-hook-form'
-
+import CardsLayout from '../../../_components/Layout/layout'
+import CardComponent from '../../../_components/Card/card'
+import CardsMenu from '../../../_components/Menu/menu'
+import styles from './page.module.scss'
 interface Props {
 }
 
@@ -14,6 +16,8 @@ export default function SetListReview(props: Props) {
   const setName = useParams().name
   const setItem = useLiveQuery(() => db.sets.where('name').equals(setName).first());
   const cards = useLiveQuery(() => db.cards.where('setName').equals(setName).toArray());
+
+
 
   const methods = useForm<FormInputs>()
 
@@ -29,37 +33,40 @@ export default function SetListReview(props: Props) {
 
 
 
-  return (<div > 
+  return (<div className={styles.root} > 
+    <CardsMenu type="setlist" setList={setItem} cards={cards}/>
     {cards && cards.length === 0 &&
-      <p>Тут пока нет ни одной карточки... добавьте первую!</p>
+      <p className={styles.empty}>Тут пока нет ни одной карточки... добавьте первую!</p>
     } 
     <form onSubmit={methods.handleSubmit(onSubmit)}>
-      <label >
+      <div className={styles.form}>
+
+      <label className={styles.label} >
         <p>Лицевая сторона</p>
         <input type="text" {...methods.register('face')} />
       </label>
-      <label >
+      <label  className={styles.label} >
         <p>Обратная сторона</p>
         <input type="text" {...methods.register('back')} />
       </label>
-      <label >
+      <label className={styles.label} >
         <p>Ссылка на изображение</p>
         <input type="text" {...methods.register('imageLink')} />
       </label>
-      <button type="submit">
+      </div>
+      <button type="submit" className={styles.submit}>
         Добавить карточку
       </button>
     </form>
 
+    <CardsLayout>
     {
       cards && cards.map((card, index) => {
         return (
-          <div key={index}>
-            <p>{card.face}</p>
-            <p>{card.back}</p>
-          </div>
+          <CardComponent {...card}/>
         )
       })
     }
+    </CardsLayout>
   </div>)
 }

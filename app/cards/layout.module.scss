@@ -1,0 +1,12 @@
+@import "../../components/styles/mixins.module.scss";
+
+
+.navigation {
+  padding: 24px 16px;
+  display: flex;
+  column-gap: 24px;
+}
+
+.link {
+  @include blueButton;
+}

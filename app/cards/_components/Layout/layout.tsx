@@ -8,7 +8,6 @@ interface Props {
 export default function CardsLayout(props: Props) {
 
   return (<div className={styles.root}> 
-    <Menu/>
     <div className={styles.cardsRoot}>
     {props.children}
     </div>
