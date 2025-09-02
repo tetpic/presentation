@@ -33,7 +33,6 @@ export default function SetListPlay(props: Props) {
             })
           }
           </CardsLayout>
-
       }
     </div>
   </>)
