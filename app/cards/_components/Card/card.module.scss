@@ -24,6 +24,7 @@
   transform: rotateY(0deg);
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 
   &_active {
     transform: rotateY(-180deg);

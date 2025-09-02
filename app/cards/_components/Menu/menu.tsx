@@ -1,6 +1,7 @@
 'use client'
 import styles from './menu.module.scss'
 import { Card, db, Sets } from '../../../../components/database/db'
+import { downloadJSON } from '../utils/downloadJSON'
 
 interface Props {
   type: 'all' | 'setlist'
@@ -9,16 +10,6 @@ interface Props {
 }
 
 export default function CardsMenu(props: Props) {
-
-  function downloadJSON(obj, filename) {
-    const dataUri = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(obj));
-    const link = document.createElement('a');
-    link.href = dataUri;
-    link.download = filename + '.ttpc';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
 
   const uploadDBonDisk = async () => {
     if(props.type === 'all') {
@@ -34,7 +25,7 @@ export default function CardsMenu(props: Props) {
       downloadJSON({
         ...props.setList,
         cards: props.cards
-      }, props.setList.name)
+      }, props.setList.label)
     }
   }
 

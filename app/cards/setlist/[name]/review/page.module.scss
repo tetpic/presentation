@@ -79,12 +79,6 @@
   }
 }
 
-.empty {
-  font-family: $comissioner;
-  font-weight: 400;
-  margin-top: 24px;
-}
-
 .cardsWrapper {
   display: flex;
   flex-direction: column;
@@ -111,16 +105,10 @@
       margin-right: 12px;
     }
   }
+}
 
-  .remove {
-    border-radius: 50%;
-    border: rgb(255, 15, 15) 1px solid;
-    width: 24px;
-    height: 24px;
-    background-color: rgb(255, 113, 113);
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    color: white;
-  }
+.importButton {
+  @include blueButton;
+  margin-top: 16px;
+  align-self: flex-start;
 }

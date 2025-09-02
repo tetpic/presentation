@@ -1,8 +1,5 @@
 @import "/components/styles/mixins.module.scss";
 
-.root {
-  padding-inline: 16px;
-}
 
 .button {
   @include blueButton;

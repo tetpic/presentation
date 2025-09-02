@@ -3,10 +3,11 @@ import { useParams } from 'next/navigation'
 import { Card, db } from '../../../../../components/database/db'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { useForm } from 'react-hook-form'
-import CardsLayout from '../../../_components/Layout/layout'
-import CardComponent from '../../../_components/Card/card'
 import CardsMenu from '../../../_components/Menu/menu'
 import styles from './page.module.scss'
+import EmptyParagraph from '../../../_components/EmptyParagraph/empty'
+import RemoveButton from '../../../_components/RemoveButton/removeButton'
+import { uploadFile } from '../../../_components/utils/uploadFile'
 interface Props {
 }
 
@@ -30,20 +31,41 @@ export default function SetListReview(props: Props) {
     const dataToSend = {
       ...data,
       setName: setName,
+      seLabel: setItem?.label,
       faceLang: setItem?.faceLang,
       backLang: setItem?.backLang
     }
     await db.cards.add(dataToSend)
+    methods.reset()
+  }
+
+  const importCards = () => {
+    uploadFile().then(res => {
+      if(res.cards as Card[]) {
+        const cards = res.cards.map(el => {
+          const {id, ..._card} = el
+          return {
+            ..._card,
+            setName: setName,
+            faceLang: setItem?.faceLang,
+            backLang: setItem?.backLang
+          }
+        })
+        db.cards.bulkAdd(cards as Card[])
+      }
+    })
   }
 
 
 
   return (<>
-    <CardsMenu type="setlist" setList={setItem} cards={cards}/>
   <div className={styles.root} > 
     {cards && cards.length === 0 &&
-      <p className={styles.empty}>Тут пока нет ни одной карточки... добавьте первую!</p>
+      <EmptyParagraph text='Тут пока нет ни одной карточки... добавьте первую!'/>
     } 
+    <CardsMenu type="setlist" setList={setItem} cards={cards}/>
+    <button type={'button'} className={styles.importButton} onClick={importCards}>Импортировать карточки</button>
+    
     {cards && 
       <div className={styles.cardsWrapper}>{
         cards.map((card, index) => {
@@ -51,7 +73,7 @@ export default function SetListReview(props: Props) {
             <div key={card.id + index} className={styles.cardInfo}>
               <p><span>{card.faceLang}:</span> {card.face} </p>
               <p><span>{card.backLang}:</span> {card.back} </p>
-              <button className={styles.remove} type='button' onClick={() => removeItem(card.id)}>X</button>
+              <RemoveButton onClick={() => removeItem(card.id)}/>
             </div>
           )
         })

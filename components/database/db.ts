@@ -8,6 +8,7 @@ interface Card {
   faceLang: string;
   backLang: string;
   setName: string;
+  setLabel: string;
 }
 
 interface Sets {

@@ -1,35 +1,19 @@
 @import "/components/styles/mixins.module.scss";
 
 .root {
-  padding: 16px;
-  min-height: 90vh;
+  padding-inline: 16px;
   display: flex;
   flex-direction: column;
-}
-
-.importButton {
-  @include blueButton;
-  margin-top: 16px;
-  align-self: flex-start
-}
-
-.edit {
-  @include blueButton;
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-}
-
-.title {
-  font-size: 20px;
-  font-family: $comissioner;
-  font-weight: 600;
-  text-align: center;
+  min-height: calc(100vh - 170px)
 }
 
 .submit {
   @include blueButton;
   margin-top: 16px;
+}
+
+.formWrapper {
+  margin-top: auto;
 }
 
 .form {
@@ -39,7 +23,16 @@
   row-gap: 12px;
   margin-top: 24px;
 
-
+  .error {
+    font-size: 12px;
+    font-family: $comissioner;
+    font-weight: 400;
+    width: 100%;
+    margin-top: -4px;
+    margin-bottom: 16px;
+    color: rgb(255, 87, 87);
+    text-align: end;
+  }
 
   label {
     font-size: 16px;
@@ -48,6 +41,11 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    span {
+      color: #8b8b8b;
+      text-transform: uppercase;
+    }
   }
 
   input {
@@ -62,35 +60,51 @@
   }
 }
 
+
 .setlist {
   display: flex;
-  flex-direction: column;
   row-gap: 12px;
   column-gap: 12px;
   flex-wrap: wrap;
+  justify-content: center;
   margin-top: 24px;
 
   .set {
     padding: 8px 12px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 8px;
     border-radius: 8px;
-    border: rgb(193, 193, 193) 1px solid;
-    background-color: $whiteGhost;
-    color: $pastaGray;
+    background-color: $pastaGray;
+    color: $whiteGhost;
     font-family: $comissioner;
     text-decoration: unset;
-    position: relative;
-    font-weight: 600;
-
-    span {
-      color: grey;
-      font-weight: 400;
-    }
   }
 }
 
-.formWrapper {
-  margin-top: auto;
+.cardsWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  margin-top: 16px;
+
+  .cardInfo {
+    padding: 6px;
+    border-radius: 12px;
+    border: 1px solid #c9c9c9;
+    position: relative;
+    padding-right: 24px;
+
+    p {
+      font-size: 16px;
+      font-family: $comissioner;
+    }
+
+    span {
+      font-size: 14px;
+      font-family: $electrolize;
+      color: #3f3f3f;
+      text-transform: uppercase;
+      margin-right: 12px;
+    }
+  }
+
+
 }
