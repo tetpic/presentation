@@ -1,5 +1,11 @@
 @import "/components/styles/mixins.module.scss";
 
+.root {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  align-items: flex-start
+}
 
 .button {
   @include blueButton;
