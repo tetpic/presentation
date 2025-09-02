@@ -1,12 +1,19 @@
 @import "/components/styles/mixins.module.scss";
 
 .root {
-  padding: 16px;
+  padding-inline: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 170px)
 }
 
 .submit {
   @include blueButton;
   margin-top: 16px;
+}
+
+.formWrapper {
+  margin-top: auto;
 }
 
 .form {
@@ -16,7 +23,16 @@
   row-gap: 12px;
   margin-top: 24px;
 
-
+  .error {
+    font-size: 12px;
+    font-family: $comissioner;
+    font-weight: 400;
+    width: 100%;
+    margin-top: -4px;
+    margin-bottom: 16px;
+    color: rgb(255, 87, 87);
+    text-align: end;
+  }
 
   label {
     font-size: 16px;
@@ -25,6 +41,11 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    span {
+      color: #8b8b8b;
+      text-transform: uppercase;
+    }
   }
 
   input {
@@ -38,6 +59,7 @@
     font-weight: 400;
   }
 }
+
 
 .setlist {
   display: flex;
@@ -61,4 +83,44 @@
   font-family: $comissioner;
   font-weight: 400;
   margin-top: 24px;
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  margin-top: 16px;
+
+  .cardInfo {
+    padding: 6px;
+    border-radius: 12px;
+    border: 1px solid #c9c9c9;
+    position: relative;
+    padding-right: 24px;
+
+    p {
+      font-size: 16px;
+      font-family: $comissioner;
+    }
+
+    span {
+      font-size: 14px;
+      font-family: $electrolize;
+      color: #3f3f3f;
+      text-transform: uppercase;
+      margin-right: 12px;
+    }
+  }
+
+  .remove {
+    border-radius: 50%;
+    border: rgb(255, 15, 15) 1px solid;
+    width: 24px;
+    height: 24px;
+    background-color: rgb(255, 113, 113);
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    color: white;
+  }
 }

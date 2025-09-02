@@ -17,6 +17,11 @@ export default function SetListReview(props: Props) {
   const setItem = useLiveQuery(() => db.sets.where('name').equals(setName).first());
   const cards = useLiveQuery(() => db.cards.where('setName').equals(setName).toArray());
 
+  const removeItem = (id: number) => {
+    db.cards.delete(id).then(res => {
+    })
+  }
+
 
 
   const methods = useForm<FormInputs>()
@@ -33,40 +38,54 @@ export default function SetListReview(props: Props) {
 
 
 
-  return (<div className={styles.root} > 
+  return (<>
     <CardsMenu type="setlist" setList={setItem} cards={cards}/>
+  <div className={styles.root} > 
     {cards && cards.length === 0 &&
       <p className={styles.empty}>Тут пока нет ни одной карточки... добавьте первую!</p>
     } 
-    <form onSubmit={methods.handleSubmit(onSubmit)}>
-      <div className={styles.form}>
-
-      <label className={styles.label} >
-        <p>Лицевая сторона</p>
-        <input type="text" {...methods.register('face')} />
-      </label>
-      <label  className={styles.label} >
-        <p>Обратная сторона</p>
-        <input type="text" {...methods.register('back')} />
-      </label>
-      <label className={styles.label} >
-        <p>Ссылка на изображение</p>
-        <input type="text" {...methods.register('imageLink')} />
-      </label>
-      </div>
-      <button type="submit" className={styles.submit}>
-        Добавить карточку
-      </button>
-    </form>
-
-    <CardsLayout>
-    {
-      cards && cards.map((card, index) => {
-        return (
-          <CardComponent {...card}/>
-        )
-      })
+    {cards && 
+      <div className={styles.cardsWrapper}>{
+        cards.map((card, index) => {
+          return (
+            <div key={card.id + index} className={styles.cardInfo}>
+              <p><span>{card.faceLang}:</span> {card.face} </p>
+              <p><span>{card.backLang}:</span> {card.back} </p>
+              <button className={styles.remove} type='button' onClick={() => removeItem(card.id)}>X</button>
+            </div>
+          )
+        })
+      }</div>
     }
-    </CardsLayout>
-  </div>)
+    {setItem &&
+      <form onSubmit={methods.handleSubmit(onSubmit)} className={styles.formWrapper}>
+        <div className={styles.form}>
+
+        <label className={styles.label} >
+          <p>Лицевая сторона <span>({setItem?.faceLang})</span></p>
+          <input type="text" {...methods.register('face', {required: true})} />
+        </label>
+          {methods.formState.errors.face && <p className={styles.error}>Обязательное поле</p>}
+        <label  className={styles.label} >
+          <p>Обратная сторона <span>({setItem?.backLang})</span></p>
+          <input type="text" {...methods.register('back', {required: true})} />
+        </label>
+          {methods.formState.errors.back && <p className={styles.error}>Обязательное поле</p>}
+        <label className={styles.label} >
+          <p>Ссылка на изображение</p>
+          <input type="text" {...methods.register('imageLink')} />
+        </label>
+        </div>
+        <button type="submit" className={styles.submit}>
+          Добавить карточку
+        </button>
+      </form>
+    }
+
+
+
+  </div>
+    </>
+
+  )
 }

@@ -47,20 +47,20 @@ export default function SetList(props: Props) {
     }
     
 
-    <form onSubmit={methods.handleSubmit(onSubmit)} >
+    <form onSubmit={methods.handleSubmit(onSubmit)} className={styles.formWrapper} >
       <div className={styles.form}>
 
       <label >
         <p>Название набора</p>
-        <input type="text" {...methods.register('label')} />
+        <input type="text" {...methods.register('label', { required: true })} />
       </label>
       <label >
         <p>Язык лицевой стороны</p>
-        <input type="text" {...methods.register('faceLang')} />
+        <input type="text" {...methods.register('faceLang', { required: true })} />
       </label>
       <label >
         <p>Язык обратной стороны</p>
-        <input type="text" {...methods.register('backLang')} />
+        <input type="text" {...methods.register('backLang', { required: true })} />
       </label>
       </div>
       <button type="submit" className={styles.submit}>Создать</button>

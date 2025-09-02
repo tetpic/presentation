@@ -1,8 +1,5 @@
 'use client'
-import Link from 'next/link'
 import styles from './menu.module.scss'
-import { useEffect } from 'react'
-import Cookies from 'js-cookie'
 import { Card, db, Sets } from '../../../../components/database/db'
 
 interface Props {
@@ -17,7 +14,7 @@ export default function CardsMenu(props: Props) {
     const dataUri = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(obj));
     const link = document.createElement('a');
     link.href = dataUri;
-    link.download = filename + '.json';
+    link.download = filename + '.ttpc';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

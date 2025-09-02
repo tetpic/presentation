@@ -5,11 +5,11 @@ import { concatStrings } from "../../helpers/common"
 import s from "./header.module.scss"
 
 const links = [
-    {name: "ABOUT", link: "/"},
-    {name: "PROJECTS", link: "/projects"},
-    {name: "BLOG", link: "/blog"},
-    {name: "MUSIC", link: "/music", disabled: true},
-    {name: "DEV", link: "/dev", disabled: true},
+    {name: "CARDS", link: "/cards"},
+    // {name: "PROJECTS", link: "/projects"},
+    // {name: "BLOG", link: "/blog"},
+    // {name: "MUSIC", link: "/music", disabled: true},
+    // {name: "DEV", link: "/dev", disabled: true},
 ]
 
 export default function Navigation () {
@@ -19,12 +19,12 @@ export default function Navigation () {
         {
             links.map((el, index)=> {
                 let isActive = (path === "/" && el.link === "/")?true:(path !== "/"&&el.link !== "/")?path.startsWith(el.link):false
-                return <Link key={index} href={el.link} className={concatStrings([s.navLink, (isActive?s.navLink_active:""), (el.disabled?s.navLink_disabled:"")])}>{el.name}</Link>
+                return <Link key={index} href={el.link} className={concatStrings([s.navLink, (isActive?s.navLink_active:"")])}>{el.name}</Link>
             })
         }
-        <div className={s.navigation__admin}>
+        {/* <div className={s.navigation__admin}>
             <Link href="/login" className={concatStrings([s.navLink, s.navLink_disabled])}>LOG IN</Link>
             <Link href="/admin" className={concatStrings([s.navLink, s.navLink_disabled])}>TETPIC <br/> STUDIO</Link>
-        </div>
+        </div> */}
     </nav>)
 }

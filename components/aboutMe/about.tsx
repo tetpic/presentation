@@ -1,29 +1,35 @@
 "use client"
 import s from "./about.module.scss"
 import { concatStrings } from "../../helpers/common"
+import MainHeader from "../mainHeader/header"
+import Link from "next/link"
 
 export default function About () { 
   
     return <>
-        <section className={s.about}>          
+    <MainHeader/>
+        {/* <section className={s.about}>          
             <picture className={s.about__background}>
                 <img src={'/images/wires.svg'}  alt="wires background"/>
             </picture>
-        </section>
-        <section className={s.gallery}>           
-        </section>
+        </section> */}
+        {/* <section className={s.gallery}>           
+        </section> */}
         <section className={s.project}>
             <div className="content">
-                <div className={s.project__titleWrapper}>
-                    <img src={'/images/tet.png'} width={82} height={100} alt={"tet logo"}/>
-                    <h6 className={concatStrings([s.title, s.project__title])}>О проекте TETPIC</h6>
-                    <img src={'/images/pic.png'} width={82} height={100} alt={"pic logo"}/>
-                </div>
                 <div className={s.project__description}>
                     <p className={s.project__descItem}>
-                        Название я придумал еще в 2020 году, когда увлекался написанием музыки на секвенсоре, и думал что буду продавать свои биты. Я закину несколько треков в проект для того, чтобы не пришлось что-то делать с авторскими правами на использование чужих дорожек.
+                        TETPIC - это мои проекты, которые я сделал в свободное время.
                     </p>
-                    <p className={s.project__descItem}> 
+                    <p className={s.project__descItem}>
+                        На данный момент в разработке проект <Link href={'/cards'}>Cards</Link>. Карточки для запоминания или изучения иностранных языков. 
+                        Вы можете использовать их по своему усмотрению. Никакие данные о вас не сохраняются на сайте и никуда 
+                        не передаются. Карточки можно импортировать и экспортировать из файлов, которые создаются приложением.
+                    </p>
+                    {/* <p className={s.project__descItem}>
+                        Название я придумал еще в 2020 году, когда увлекался написанием музыки на секвенсоре, и думал что буду продавать свои биты. Я закину несколько треков в проект для того, чтобы не пришлось что-то делать с авторскими правами на использование чужих дорожек.
+                    </p> */}
+                    {/* <p className={s.project__descItem}> 
                         В первую очередь, данный сайт это сайт портфолио и навигации по проектам со ссылками на гитхаб и, возможно, ссылками и комментариями на рабочие проекты, исходный код которых писал я. 
                     </p>
                     <p className={s.project__descItem}>
@@ -34,7 +40,7 @@ export default function About () {
                     </p>
                     <p className={s.project__descItem}>
                         Р.S.: есть в планах, если в каком-нибудь из отпусков будет слишком пасмурная погода, да и чтобы хоть как-то оправдать название проекта - сделать тут мини игру тетрис. Мне опыт, и кому-то время убить, поразвлекаться.
-                    </p>
+                    </p> */}
                 </div>
             </div>
         </section>
@@ -60,6 +66,12 @@ export default function About () {
                             25.07.2023: Слегка перерисовал макет в Figma, <br /> 
                             добавил идею 3d модели на главной странице. <br />
                             Планирую добавить анимацию.
+                        </p>
+                        <p className={s.changelog__item}>
+                            01.09.2025: Добавил начальный вариант приложения с карточками. Пока что можно только экспортировать.<br /> 
+                            По поводу импорта и о том как пользоваться приложением, как установить его на телефон - новости будут позже. <br/> <br/>
+                            Удалил несколько блоков с начальной страницы в надежде что моя любимая жена 
+                            нарисует макет и как нибудь поможет оформить главную страницу и в целом проект.
                         </p>
                     </div>
                 </div>

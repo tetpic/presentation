@@ -42,6 +42,7 @@
 
 @mixin title {
     font-family: $comissioner;
-    font-size: 24px;
+    font-size: 26px;
+    text-decoration: underline;
     font-weight: 600;
 }

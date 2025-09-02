@@ -2,6 +2,10 @@
 
 .root {
   padding: 16px;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .title {
@@ -62,4 +66,8 @@
     font-family: $comissioner;
     text-decoration: unset;
   }
+}
+
+.formWrapper {
+  margin-top: auto;
 }
