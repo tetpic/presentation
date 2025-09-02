@@ -11,9 +11,6 @@ export default function CardsPage () {
   
     return (
       <>
-        {cards?.length > 0 &&
-          <CardsMenu type={"all"}/>
-        }
         {cards?.length === 0 &&
           <EmptyParagraph text="Тут пока нет ни одной карточки... Перейдите в список наборов и добавьте первый набор!"/>
         }

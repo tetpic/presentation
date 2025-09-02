@@ -53,7 +53,6 @@ export default function SetList(props: Props) {
 
   const importCardSet = () => {
     uploadFile().then(res => {
-      console.log(res)
       if(res.setlist && res.cards && res.cards.length > 0) {
         const cards = res.cards.map(el => {
           const {id, ..._card} = el
@@ -71,8 +70,7 @@ export default function SetList(props: Props) {
           }
         })
         db.sets.bulkAdd(setLists)
-      }
-  
+      }  
     })
   }
 
@@ -81,7 +79,7 @@ export default function SetList(props: Props) {
     <p className={styles.title}>Список наборов</p>
     <CardsMenu type="all"/>
     
-    <button type={'button'} onClick={importCardSet} className={styles.importButton}>Импортировать наборы</button>
+    <button type={'button'} onClick={importCardSet} className={styles.importButton}>Загрузить наборы</button>
     {sets?.length === 0 &&
       <EmptyParagraph text='Тут пока нет ни одного набора... Но всегда можно создать первый!'/>
     }
@@ -100,7 +98,7 @@ export default function SetList(props: Props) {
                 e.preventDefault()
                 e.stopPropagation()
                 addCardsToSetList(set)
-              }}>Добавить карточки</button>
+              }}>+</button>
             </Link>
           )
           ) 
@@ -117,11 +115,23 @@ export default function SetList(props: Props) {
       </label>
       <label >
         <p>Язык лицевой стороны</p>
-        <input type="text" {...methods.register('faceLang', { required: true })} />
+        <select  {...methods.register('faceLang', { required: true })} >
+          <option value="RU">Русский</option>
+          <option value="DE">Немецкий</option>
+          <option value="TR">Турецкий</option>
+          <option value="EN">Английский</option>
+          <option value="GE">Грузинский</option>
+        </select>
       </label>
       <label >
         <p>Язык обратной стороны</p>
-        <input type="text" {...methods.register('backLang', { required: true })} />
+        <select  {...methods.register('backLang', { required: true })} >
+          <option value="RU">Русский</option>
+          <option value="DE">Немецкий</option>
+          <option value="TR">Турецкий</option>
+          <option value="EN">Английский</option>
+          <option value="GE">Грузинский</option>
+        </select>
       </label>
       </div>
       <button type="submit" className={styles.submit}>Создать</button>

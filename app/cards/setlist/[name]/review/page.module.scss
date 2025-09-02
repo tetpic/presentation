@@ -2,9 +2,10 @@
 
 .root {
   padding-inline: 16px;
+  padding-bottom: 32px;
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 170px)
+  min-height: calc(100vh - 64px)
 }
 
 .submit {

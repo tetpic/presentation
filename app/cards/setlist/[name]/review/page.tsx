@@ -60,11 +60,11 @@ export default function SetListReview(props: Props) {
 
   return (<>
   <div className={styles.root} > 
+    <CardsMenu type="setlist" setList={setItem} cards={cards}/>
+    <button type={'button'} className={styles.importButton} onClick={importCards}>Импортировать карточки</button>
     {cards && cards.length === 0 &&
       <EmptyParagraph text='Тут пока нет ни одной карточки... добавьте первую!'/>
     } 
-    <CardsMenu type="setlist" setList={setItem} cards={cards}/>
-    <button type={'button'} className={styles.importButton} onClick={importCards}>Импортировать карточки</button>
     
     {cards && 
       <div className={styles.cardsWrapper}>{
