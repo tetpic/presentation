@@ -13,10 +13,12 @@
   "author": "tetpic",
   "license": "ISC",
   "dependencies": {
+    "@ant-design/icons": "^5.6.1",
     "@react-three/drei": "^9.79.4",
     "@react-three/fiber": "^8.13.5",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/react": "^18.2.13",
+    "antd": "^5.27.2",
     "body-parser": "^1.20.2",
     "classnames": "^2.5.1",
     "cors": "^2.8.5",

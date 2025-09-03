@@ -1,13 +1,33 @@
 'use client'
 import { useLiveQuery } from "dexie-react-hooks";
-import { db } from "../../components/database/db";
-import Card from "./_components/Card/card";
+import { Card, db } from "../../components/database/db";
 import CardsLayout from "./_components/Layout/layout";
 import CardsMenu from "./_components/Menu/menu";
 import EmptyParagraph from "./_components/EmptyParagraph/empty";
+import { useEffect, useRef, useState } from "react";
+import { shuffleArray } from "./_components/utils/shuffleArray";
+import CardComponent from "./_components/Card/card";
 
 export default function CardsPage () {
   const cards = useLiveQuery(() => db.cards.toArray());
+  const userSettings = useLiveQuery(() => db.userSettings.toArray());
+  const [randomCards, setRandomCardsState] = useState<Card[] | null>(null)
+  const isInitialSuffled = useRef(false)
+
+  const shuffleCards = (needShuffle: boolean) => {
+    if(needShuffle) {
+      setRandomCardsState(shuffleArray(cards as Card[]))
+    } else {
+      setRandomCardsState(null)
+    }
+  }
+
+  useEffect(()=>{
+    if(userSettings?.[0] && cards && cards.length > 0 && !isInitialSuffled.current) {
+      isInitialSuffled.current = true
+      shuffleCards(userSettings?.[0].alwaysShuffleCards === 'true')
+    }
+  }, [userSettings, cards])
   
     return (
       <>
@@ -16,9 +36,9 @@ export default function CardsPage () {
         }
         {cards && 
         <CardsLayout>
-          {cards.map((card) => {
+          {(randomCards || cards).map((card) => {
             return (
-              <Card {...card}/>
+              <CardComponent {...card} key={card.id} reverseMode={userSettings?.[0]?.cardInitialSide === 'back'}/>
             )
           })}
         </CardsLayout>}
