@@ -37,13 +37,13 @@ export default function CardsMenu(props: Props) {
 
     {props.type === 'setlist' && props.cards?.length > 0 &&
     <button type='button' onClick={uploadDBonDisk} className={styles.button} >
-      <p>Экспортировать набор</p> 
+      Экспортировать набор
     </button> 
     }
     {
       props.type === 'all' &&
     <button type='button' onClick={uploadDBonDisk} className={styles.button} >
-      <p>Скачать все наборы</p>
+      Скачать все наборы
     </button> 
     }
   </div>)

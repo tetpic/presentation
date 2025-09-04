@@ -26,6 +26,10 @@
   justify-content: center;
   cursor: pointer;
 
+  * {
+    color: $pastaGray;
+  }
+
   &_active {
     transform: rotateY(-180deg);
   }

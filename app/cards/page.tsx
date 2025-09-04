@@ -2,7 +2,6 @@
 import { useLiveQuery } from "dexie-react-hooks";
 import { Card, db } from "../../components/database/db";
 import CardsLayout from "./_components/Layout/layout";
-import CardsMenu from "./_components/Menu/menu";
 import EmptyParagraph from "./_components/EmptyParagraph/empty";
 import { useEffect, useRef, useState } from "react";
 import { shuffleArray } from "./_components/utils/shuffleArray";

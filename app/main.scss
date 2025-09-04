@@ -1,4 +1,5 @@
 @import 'swiper/css';
+@import '../components/styles/variables.module.scss';
 
 @font-face {
     font-family: "Electrolize";
@@ -81,6 +82,7 @@
 *{
     box-sizing: border-box !important;
     -webkit-tap-highlight-color: transparent;
+    color: var(--fontColor);
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -92,7 +94,7 @@ body {
     padding: 0;
     margin: 0;
     min-height: 100vh;
-    background-color: #faf4f0;
+    // background-color: var(#faf4f0);
 }
 
 h1 {
@@ -107,7 +109,11 @@ h1 {
 }
 
 .main-wrapper {
-    min-height: 90vh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100%;
+    background-color: var(--backgroundColor);
+
 }
 
 
@@ -120,4 +126,24 @@ h1 {
     height: 100%;
     object-fit: cover;
 }
+
+.ant-select-item-option-content {
+    * {
+        color: $pastaGray !important; 
+    }
+}
+
+body[data-theme="dark"] {
+    --backgroundColor: #{$deepBlue};
+    --fontColor: #{$whiteGhost};
+    --itemBackground: #{$grayBlue};
+}
+
+body[data-theme="light"] {
+    --backgroundColor: #{$whiteGhost};
+    --fontColor: #{$pastaBlue};
+    --itemBackground: white;
+}
+
+
 

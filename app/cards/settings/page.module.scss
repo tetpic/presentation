@@ -48,6 +48,9 @@
 .input {
   width: 100% !important;
   font-family: $comissioner;
+  span {
+    color: $pastaBlue;
+  }
 }
 
 .setlist {

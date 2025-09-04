@@ -1,11 +1,23 @@
+'use client'
 import Link from 'next/link'
 import styles from './layout.module.scss'
+import { useLiveQuery } from 'dexie-react-hooks';
+import { db } from '../../components/database/db';
+import { useEffect } from 'react';
 
 interface Props {
   children: React.ReactNode
 }
 
 export default function CardsRootLayout(props: Props) {
+  const userSettings = useLiveQuery(() => db.userSettings.toArray());
+
+  useEffect(()=>{
+    if(userSettings?.[0].theme) {
+      document.body.dataset.theme = userSettings?.[0].theme
+    }
+  }, [userSettings])
+
 
   return (
     <div className={styles.root}>

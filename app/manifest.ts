@@ -2,9 +2,9 @@ import type { MetadataRoute } from 'next'
  
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Tetpic PWA',
-    short_name: 'Tetpic',
-    description: 'A Progressive Web App built with Next.js',
+    name: 'Tetpic Cards PWA',
+    short_name: 'Cards',
+    description: 'Mind cards for learning',
     start_url: '/cards',
     display: 'standalone',
     background_color: '#ffffff',
@@ -21,5 +21,6 @@ export default function manifest(): MetadataRoute.Manifest {
         type: 'image/png',
       },
     ],
+    prefer_related_applications: false
   }
 }
