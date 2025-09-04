@@ -13,8 +13,8 @@ export default function CardsRootLayout(props: Props) {
   const userSettings = useLiveQuery(() => db.userSettings.toArray());
 
   useEffect(()=>{
-    if(userSettings?.[0].theme) {
-      document.body.dataset.theme = userSettings?.[0].theme
+    if(userSettings && userSettings?.[0]?.theme) {
+      document.body.dataset.theme = userSettings?.[0]?.theme
     }
   }, [userSettings])
 
