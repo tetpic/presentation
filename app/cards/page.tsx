@@ -37,7 +37,7 @@ export default function CardsPage () {
         <CardsLayout>
           {(randomCards || cards).map((card) => {
             return (
-              <CardComponent {...card} key={card.id} reverseMode={userSettings?.[0]?.cardInitialSide === 'back'}/>
+              <CardComponent {...card} hardMode={userSettings?.[0]?.hardMode === 'true'} key={card.id} reverseMode={userSettings?.[0]?.cardInitialSide === 'back'}/>
             )
           })}
         </CardsLayout>}

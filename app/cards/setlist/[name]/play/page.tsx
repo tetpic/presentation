@@ -47,7 +47,12 @@ export default function SetListPlay(props: Props) {
         {
           (randomCards || cards).map((card, index) => {
             return (
-              <CardComponent key={index} {...card} reverseMode={userSettings?.[0]?.cardInitialSide === 'back'}/>)
+              <CardComponent 
+              key={index} 
+              {...card} 
+              reverseMode={userSettings?.[0]?.cardInitialSide === 'back'}
+              hardMode={userSettings?.[0]?.hardMode === 'true'}
+              />)
             })
           }
         </CardsLayout>
